@@ -7,7 +7,8 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 -The implementation is done on version 0.9.1 of the LÖVE engine:https://love2d.org/
 -A python implementation written in turtle is provided as well
 ## Example renders
-Coming soon!
+-Check out the python script attached to this repository
+-Also some finished products will be coming soon!
 ## Usage
 - `git clone https://github.com/jryzkns/Loss.git`
 - Take `L.lua` and place it in the directory containing the love script you will be working on
@@ -30,5 +31,8 @@ Coming soon!
 - render() is the drawing call to make. `love.graphics.translate()` to the point where you want to begin then call render.
 - the parameters are passed in in this order: `render(path,size,angle,iteration,rules)`
 
+## a note on usage
+- rendering L system constructs can take up to over 100 calls easily, which is very expensive if it is called on every flip. 
+- It is recommended to draw to a canvas at initialization and then draw the canvas at each flip instead.
 
 jryzkns 2018
