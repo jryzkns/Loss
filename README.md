@@ -4,6 +4,8 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 ## What is this? 
 -L-Systems are short for Lindenmayer Systems. It is a formal contextualization of naturally recurring constructs (ex. fractals and plants) under the light of formal language and automata theory.
 -Wikipedia has some great examples on the matter: https://en.wikipedia.org/wiki/L-system
+-The implementation is done on version 0.9.1 of the LÖVE engine:https://love2d.org/
+-A python implementation written in turtle is provided as well
 ## Example renders
 Coming soon!
 ## Usage
