@@ -8,6 +8,7 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 - A python implementation written in turtle is provided as well
 ## Example renders
 - Check out the python script attached to this repository
+- An example `main.lua` file is provided in this repository, try to run it!
 - Also some finished products will be coming soon!
 ## Usage
 - `git clone https://github.com/jryzkns/Loss.git`
