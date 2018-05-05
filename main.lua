@@ -9,9 +9,9 @@ function love.load()
         path = "F" -- axiom
         angle = 15
         rules = {}
-        rules[1] = {"F","F[+[F]+[B]]-B"}
-        rules[2] = {"B","BF[-B]B+B"}
-        iterations = 4
+        rules[1] = {"F","F[+[B]+[B]]-B"}
+        rules[2] = {"B","BF[-F]B+B"}
+        iterations = 2
         linesize = 10
 end
 
