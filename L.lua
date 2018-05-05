@@ -1,3 +1,6 @@
+-- L
+-- jryzkns 2018
+
 function evolve(path, rules)
         --takes in a string, a table of rules, and returns the evolved string
         local out = ""
@@ -25,7 +28,6 @@ function render(path,size,angle,iteration,rules) -- angle here is taken in as de
         end
         
         love.graphics.push()
-                love.graphics.rotate(math.rad(-90))
                 for i=1,string.len(path) do
                         step = path:sub(i,i)
                         if ((step == "F") or (step == "L") or (step == "R") or (step == "B")) then
