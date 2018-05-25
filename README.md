@@ -23,8 +23,8 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 - `[`,`]` are stack operations pushing or popping the current state of the reference point onto a stack. It is mainly used for branching behaviour
 ### initialize `Axiom`, `Rules`, `Iterations`, `Angle`, and `Linesize` as variables
 - `Axiom` is a string denoting the initial state of the system.
-- `Rules` should be initialized as an empty table, and then append individual formation rules. 
-- Formation rules are tables as well. if a formation rule states that a -> b, then it will be {"a","b"}
+- `Rules` should be initialized as an empty table, and then append individual formation rules with the key being the original symbol in the alphabet. 
+- Formation rules are tables as well. if a formation rule states that a -> b, then it will be rules["a"] = "b"
 - `Iterations` is an integer denoting how many iterations the system will evolve
 - `Angle` determines how much each call will turn, it is in DEGREES.
 - `Linesize` is how long each line is going to be. Beware that these drawings can become big really quickly, so use a small value when testing!
