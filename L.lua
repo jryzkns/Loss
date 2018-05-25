@@ -9,12 +9,8 @@ function L:evolve(path, rules)
         -- stuff here
         for i=1,string.len(path) do
                 local step = path:sub(i,i)
-                for j,rule in ipairs(rules) do
-                        -- if a rule exists for the current step:
-                        if (step == rule[1]) then
-                                step = rule[2]
-
-                        end
+                if rules[step] ~= nil then
+                        step = rules[step]
                 end
 
                 -- if no rule exists, insert step itself
