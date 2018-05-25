@@ -13,7 +13,7 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 ## Usage
 - `git clone https://github.com/jryzkns/Loss.git`
 - Take `L.lua` and place it in the directory containing the love script you will be working on
-- Put `require("L")` in the love script where drawing will be called.
+- Put `local L = require("L")` in the love script where drawing will be called.
 ### the alphabet:
 - the built-in alphabet contains the following symbols:
 - `F`,`B`,`L`,`R`,`f`,`+`,`-`,`[`,`]`
@@ -29,8 +29,8 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 - `Angle` determines how much each call will turn, it is in DEGREES.
 - `Linesize` is how long each line is going to be. Beware that these drawings can become big really quickly, so use a small value when testing!
 ### drawing
-- render() is the drawing call to make. `love.graphics.translate()` to the point where you want to begin then call render.
-- the parameters are passed in in this order: `render(path,size,angle,iteration,rules)`
+- L:render() is the drawing call to make. `love.graphics.translate()` to the point where you want to begin then call render.
+- the parameters are passed in in this order: `L:render(path,size,angle,iteration,rules)`
 
 ## a note on usage
 - rendering L system constructs can take up to over 100 calls easily, which is very expensive if it is called on every flip. 
