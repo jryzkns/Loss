@@ -1,7 +1,9 @@
 -- L
 -- jryzkns 2018
 
-function evolve(path, rules)
+L= {}
+
+function L:evolve(path, rules)
         --takes in a string, a table of rules, and returns the evolved string
         local out = ""
         -- stuff here
@@ -21,7 +23,7 @@ function evolve(path, rules)
         return out
 end
 
-function render(path,size,angle,iteration,rules) -- angle here is taken in as degrees
+function L:render(path,size,angle,iteration,rules) -- angle here is taken in as degrees
         
         for i=1,iteration do
                 path = evolve(path,rules)
@@ -47,3 +49,5 @@ function render(path,size,angle,iteration,rules) -- angle here is taken in as de
                 end
         love.graphics.pop()
 end
+
+return L
