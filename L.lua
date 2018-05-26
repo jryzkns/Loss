@@ -22,7 +22,7 @@ end
 function L:render(path,size,angle,iteration,rules) -- angle here is taken in as degrees
         
         for i=1,iteration do
-                path = evolve(path,rules)
+                path = L:evolve(path,rules)
         end
         
         love.graphics.push()
