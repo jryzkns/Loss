@@ -10,6 +10,26 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 - Check out the python script attached to this repository
 - An example `main.lua` file is provided in this repository, try to run it!
 - Also some finished products will be coming soon!
+## Example L Systems (that I came up with myself!)
+- Lightning
+```
+lightning = {}
+lightning.path = "F" -- axiom
+lightning.angle = 25
+lightning.rules = {}
+lightning.rules["F"] = "FL[++F][-FF]"
+lightning.rules["L"] = "L+F-F[L]"
+```
+- A sample tree
+```
+tree = {}
+tree.path = "Ff"
+tree.maxorder = 4
+tree.angle = 18
+tree.rules = {}
+tree.rules["F"] = "F[+[F]+[Bf]]-B"
+tree.rules["B"] = "BFB[--B]+Bf"
+```
 ## Usage
 - `git clone https://github.com/jryzkns/Loss.git`
 - Take `L.lua` and place it in the directory containing the love script you will be working on
