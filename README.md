@@ -8,17 +8,19 @@ Deterministic Context-Free L system implementation for drawing fractal curves an
 - A python implementation written in turtle is provided as well
 ## Example renders
 - Check out the python script attached to this repository
-- An example `main.lua` file is provided in this repository, try to run it!
-- Also some finished products will be coming soon!
+- Some finished products will be coming soon!
 ## Example L Systems (that I came up with myself!)
 - Lightning
 ```
 lightning = {}
 lightning.path = "F" -- axiom
+lightning.size = 15
 lightning.angle = 25
 lightning.rules = {}
 lightning.rules["F"] = "FL[++F][-FF]"
 lightning.rules["L"] = "L+F-F[L]"
+
+ligntning = L:init(lightning.path,lightning.size,lightning.angle,lightning.rules,4)
 ```
 - A sample tree
 ```
@@ -29,11 +31,22 @@ tree.angle = 18
 tree.rules = {}
 tree.rules["F"] = "F[+[F]+[Bf]]-B"
 tree.rules["B"] = "BFB[--B]+Bf"
+-- call L:init() with these values in mind
 ```
 ## Usage
 - `git clone https://github.com/jryzkns/Loss.git`
 - Take `L.lua` and place it in the directory containing the love script you will be working on
 - Put `local L = require("L")` in the love script where drawing will be called.
+- Call `L:init()` and initialize values inside `love.load()`
+- Call `L:render()` to draw your construct
+- If you need to introduce new symbols into the alphabet, you either:
+* for straightline drawings, you do `L.extradrawchars = L.extradrawchars .. "your symbol here"`
+* for new symbols that have new functionalities, you write the function as the following:
+```
+L:drawtable["your symbol here"] = function()
+    -function goes here
+end
+```
 ### the alphabet:
 - the built-in alphabet contains the following symbols:
 - `F`,`B`,`L`,`R`,`f`,`+`,`-`,`[`,`]`
@@ -49,8 +62,7 @@ tree.rules["B"] = "BFB[--B]+Bf"
 - `Angle` determines how much each call will turn, it is in DEGREES.
 - `Linesize` is how long each line is going to be. Beware that these drawings can become big really quickly, so use a small value when testing!
 ### drawing
-- L:render() is the drawing call to make. `love.graphics.translate()` to the point where you want to begin then call render.
-- the parameters are passed in in this order: `L:render(path,size,angle,iteration,rules)`
+- L:render() is the drawing call to make. `love.graphics.translate()` to the point where you want to begin then call `L:render()`
 
 ## a note on usage
 - rendering L system constructs can take up to over 100 calls easily, which is very expensive if it is called on every flip. 
